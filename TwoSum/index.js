@@ -24,14 +24,11 @@
  */
 var twoSum = function(nums, target) {
     const res = new Map()
-    const final = []
     for (let i = 0; i<nums.length; i++) {
         const value = target - nums[i]
         if(res.has(value)) {
-            final.push(res.get(target - nums[i]), i)
-            break
+            return [res.get(target - nums[i]), i]
         }
         res.set(nums[i], i);
     }
-    return final
 };
